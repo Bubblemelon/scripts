@@ -1,3 +1,5 @@
+" :source ~/.vimrc
+
 set number
 color industry
 filetype plugin indent on
