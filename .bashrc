@@ -41,9 +41,7 @@ alias spitjson='python -m json.tool'
 alias la='ls -a'
 alias lla='ls -la'
 alias adbfoward='/home/cherylfong/Android/Sdk/platform-tools/adb forward tcp:8080 tcp:8080 && google-chrome http://localhost:8080'
-# alias ssh=color-ssh
 alias aws-bubblemelon='ssh -X ubuntu@54.68.68.106 -i ~/.ssh/bubblemelonServer.pem'
-alias aws-868='ssh -X ubuntu@13.52.51.45 -i ~/.ssh/868-server.pem'
 
 ipack() {
 ign
@@ -125,16 +123,16 @@ export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; histor
 # export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 color-ssh() {
-    trap ".color-term.sh" INT EXIT
+    trap "~/.color-term.sh" INT EXIT
 	# if $* contains the substring "bubble"
-    if [[ "$*" =~ "bubble" ]]; then
-        ./.color-term.sh 1
-    elif [[ "$*" =~ "ubuntu" ]]; then
-        ./.color-term.sh 2
+    if [[ "$*" =~ "orange" ]]; then
+        ~/.color-term.sh 1
+    elif [[ "$*" =~ "blue" ]]; then
+        ~/.color-term.sh 2
     else
-        ./.color-term.sh
+        ~/.color-term.sh
     fi
-	ssh $*
+    # ssh $*
 }
 ## set `ssh` to call color-ssh() via:
 ## alias ssh=color-ssh
