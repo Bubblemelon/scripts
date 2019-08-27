@@ -21,7 +21,7 @@ HISTFILESIZE=-1
 # export SYSTEMD_PAGER=
 
 ## User specific aliases and functions
-export PATH=$PATH:$HOME/.local/bin:/usr/bin/:~/Desktop/Github/container-linux-config-transpiler/bin:~/Desktop/Github/tectonic-installer/tectonic-dev/installer:$JAVA_HOME/bin:$(go env GOPATH)/bin:~/bin
+export PATH=$PATH:$HOME/.local/bin:/usr/bin/:~/Desktop/Github/container-linux-config-transpiler/bin:~/Desktop/Github/tectonic-installer/tectonic-dev/installer:$JAVA_HOME/bin:$(go env GOPATH)/bin:~/bin:~/flutter/bin:/opt/julia-1.1.1/bin
 
 ## GO ENV
 export GOPATH=$HOME/go
@@ -41,7 +41,7 @@ alias spitjson='python -m json.tool'
 alias la='ls -a'
 alias lla='ls -la'
 alias adbfoward='/home/cherylfong/Android/Sdk/platform-tools/adb forward tcp:8080 tcp:8080 && google-chrome http://localhost:8080'
-alias aws-bubblemelon='ssh -X ubuntu@54.68.68.106 -i ~/.ssh/bubblemelonServer.pem'
+alias aws-bubblemelon='ssh -i ~/.ssh/bubblemelon.pem ubuntu@52.24.45.54'
 
 ipack() {
 ign
@@ -138,3 +138,22 @@ color-ssh() {
 ## alias ssh=color-ssh
 ## https://unix.stackexchange.com/questions/57940/trap-int-term-exit-really-necessary
 ## reference: http://bryangilbert.com/post/etc/term/dynamic-ssh-terminal-background-colors/
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/cherylfong/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/cherylfong/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/cherylfong/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/cherylfong/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+## To activate conda automatically:
+## conda config --set auto_activate_base false
+## https://stackoverflow.com/questions/54429210/how-do-i-prevent-conda-from-activating-the-base-environment-by-default
